@@ -1,0 +1,128 @@
+<div class="modal-header blue">
+  <h4 class="modal-title">
+    <i class="fa fa-fw fa-chevron-right"></i> New Employee
+    <button type="button" class="close" ng-click="cancel()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </h4>
+</div>
+<form name="signupForm" role="form">
+  <div class="modal-body">
+    <div class="row">
+      
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Employee ID</label>
+          <input type="text" ng-model="users.emp_id" class="form-control" required focus>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" ng-model="users.username" class="form-control" required >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Password</label>
+          <input type="text" ng-model="users.password" class="form-control" required >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" ng-model="users.fname" class="form-control" required >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Middle</label>
+          <input type="text" ng-model="users.mname" class="form-control" required >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" ng-model="users.lname" class="form-control" required >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Birthday</label>
+          <input type="text" name="bdate" ng-model="users.bdate" id="bdate" class="form-control" required>
+          <script src="date-picker/js/moment.min.js"></script>
+          <script src="date-picker/js/bootstrap-datetimepicker.min.js"></script>
+          <script type="text/javascript">
+            $('input[name="bdate"]').datetimepicker({format: 'YYYY-MM-DD' });
+          </script>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Cellphone Number</label>
+          <input type="text" ng-model="users.cellno" class="form-control" required >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Gender</label>
+          <select class="form-control" ng-model="users.gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Employee Type</label>
+          <select class="form-control" ng-model="users.usertype" required>
+            <option ng-repeat="data in emptypeList" value="{{data.employee_type}}">
+              {{data.employee_type}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Employee Position</label>
+          <select class="form-control" ng-model="users.position" required>
+            <option ng-repeat="data in posList" value="{{data.id}}">
+              {{data.description}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Employee Role</label>
+          <select class="form-control" ng-model="users.role" required>
+            <option ng-repeat="data in roleList" value="{{data.role_id}}">
+              {{data.role_name}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <label>Address</label>
+          <textarea type="text" ng-model="users.address" class="form-control" required > </textarea>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Employee Schedule</label>
+          <select class="form-control" ng-model="users.schedule" required>
+            <option ng-repeat="data in scheduleList" value="{{data.id}}">
+              {{data.time_in}} - {{data.time_out}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary btn-sm" id="btnaddUser" data-dismiss="modal" ng-click="addEmployee(users)"> 
+      <i class="fa fa-send fa-fw"></i> Submit
+    </button> 
+  </div>
+</form>

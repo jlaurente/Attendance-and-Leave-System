@@ -1,0 +1,74 @@
+<style>
+.selected {
+    color:#008080;
+    font-weight:bold;
+}
+</style>
+<div id="page-wrapper">
+  <div ng-include="'head.html'"></div>
+  <br>
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 style="color: #666666;"><i class="fa fa-shopping-bag"></i> Item Management</h3>
+      <ol class="breadcrumb">
+        <li><i class="fa fa-home"></i><a href="#/dashboard"> Home</a></li>
+        <li><i class="fa fa-list"></i> Item List</li>
+      </ol>
+      <div class="pull-left" ng-if="role === '2'">
+        <a href="#/new_item" class="btn btn-primary btn-sm">
+            <i class="fa fa-cart-plus"></i> New Item
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="form-group col-lg-12">
+      <table class="table table-bordered table-condensed table-hover table-striped " datatable="ng"
+         dt-instance="vm.dtInstance"  width="100%" dt-options="vm.dtOptions" dt-column-defs="vm.dtColumnDefs" >
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Category</th>
+              <th>Brand</th>
+              <!-- <th>SKU</th> -->
+              <th>Price</th>
+              <th>Date Purchase</th>
+              <th>Issued To</th>
+              <!-- <th>Issued By</th> -->
+              <th>Date Issuance</th>
+              <th ng-if="role === '2'">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="users in itemList" ng-class="{'warning':$index == selectedRow}" ng-click="setClickedRow($index)">
+              <td>{{users.id}}</td>
+              <td>{{users.category}}</td>
+              <td>{{users.brand}}</td>
+              <!-- <td><img src="api/barcode.php?s=code128a&d={{users.sku | minLength:13}}"></td> -->
+              <td>{{users.price}}</td>
+              <td>{{users.date_purchase}}</td>
+              <td>{{users.issued_to}}</td>
+              <!-- <td>{{users.issued_by}}</td> -->
+              <td>{{users.date_issuance}}</td>
+              <td ng-if="role === '2'">
+                <button class="btn btn-xs btn-default" ng-click="deleteUser(users.id)">
+                  <i class="fa fa-print"></i>
+                </button>
+                <a ng-href="#/edit_user/{{users.id}}" class="btn btn-xs btn-default">
+                  <i class="fa fa-edit"></i>
+                </a>
+                <button class="btn btn-xs btn-default" ng-click="deleteUser(users.id)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+  

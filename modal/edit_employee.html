@@ -1,0 +1,129 @@
+<div class="modal-header green">
+  <h4 class="modal-title">
+    <i class="fa fa-fw fa-chevron-right"></i> Update Employee
+    <button type="button" class="close" ng-click="cancel()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </h4>
+</div>
+<div ng-repeat="users in listUser">
+  <div class="modal-body">
+    <div class="row" >
+      <form name="signupForm" role="form">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Employee ID</label>
+            <input type="text" ng-model="users.employee_id" class="form-control" required focus>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" ng-model="users.username" class="form-control" required >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Password</label>
+            <input type="text" ng-model="users.password" class="form-control" required >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" ng-model="users.firstname" class="form-control" required >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Middle</label>
+            <input type="text" ng-model="users.mname" class="form-control" required >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" ng-model="users.lastname" class="form-control" required >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Birthday</label>
+            <input type="date" ng-model="users.birthdate" class="form-control" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Cellphone Number</label>
+            <input type="text" ng-model="users.contact_info" class="form-control" required >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Gender</label>
+            <select class="form-control" ng-model="users.gender" required>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Employee Type</label>
+            <select class="form-control" ng-model="users.emptype" required>
+              <option ng-repeat="data in emptypeList" value="{{data.employee_type}}" 
+                ng-selected = "data.employee_type == emptype">
+                {{data.employee_type}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Employee Position</label>
+            <select class="form-control" ng-model="users.position" required>
+              <option ng-repeat="data in posList" value="{{data.id}}" 
+              ng-selected = "data.id == position">
+                {{data.description}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Employee Role</label>
+            <select class="form-control" ng-model="users.role_id" required>
+              <option ng-repeat="data in roleList" value="{{data.role_id}}" 
+              ng-selected = "data.role_id == role_id">
+                {{data.role_name}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="form-group">
+            <label>Address</label>
+            <textarea type="text" ng-model="users.address" class="form-control" required > </textarea>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Employee Schedule</label>
+            <select class="form-control" ng-model="users.schedule" required>
+              <option ng-repeat="data in scheduleList" value="{{data.id}}" 
+              ng-selected = "data.id == schedule">
+                {{data.time_in}} - {{data.time_out}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary btn-sm"  data-dismiss="modal" 
+    ng-click="editEmployee(users)" > 
+      <i class="fa fa-send fa-fw"></i> Re-processs
+    </button> 
+  </div>
+</div>

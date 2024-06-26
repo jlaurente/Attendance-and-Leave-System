@@ -1,0 +1,80 @@
+<style>
+.selected {
+    color:#008080;
+    font-weight:bold;
+}
+</style>
+<div id="page-wrapper">
+  <div ng-include="'head.html'"></div>
+  <br>
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 style="color: #666666;"><i class="fa fa-users"></i> Leave Records</h3>
+      <ol class="breadcrumb">
+        <li><i class="fa fa-home"></i><a href="#/dashboard"> Home</a></li>
+        <li><i class="fa fa-list"></i> Leave Records</li>
+      </ol>
+      <div ng-if="role === '2'">
+        <div class="pull-right">
+          <button class="btn btn-warning btn-sm" ng-click="newLeave()">
+            <i class="fa fa-fw fa-user-plus"></i>
+            Add Leave
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    
+    <div class="form-group col-lg-12">
+      <center>
+      <div class="form-group" ng-repeat="emp in leaveList">
+        <label>Sick Leave: </label> <span class="label label-danger">{{emp.sick_leave}}</span>
+        &nbsp;&nbsp;
+        <label>Vacation Leave: </label> <span class="label label-danger">{{emp.vacation_leave}}</span>
+      </div>
+      </center>
+      <table class="table table-bordered table-condensed table-hover table-striped " datatable="ng"
+         dt-instance="vm.dtInstance"  width="100%" dt-options="vm.dtOptions" dt-column-defs="vm.dtColumnDefs" >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type of Leave</th>
+              <th>Leave Start</th>
+              <th>Leave End</th>
+              <th># Days</th>
+              <th>Reason</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="users in userList" ng-class="{'warning':$index == selectedRow}" ng-click="setClickedRow($index)">
+              <td>{{users.firstname}} {{users.mname}} {{users.lastname}}</td>
+              <td>{{users.description}}</td>
+              <td>{{users.contact_info}}</td>
+              <td>{{users.role_name}}</td>
+              <td>{{users.employee_type}}</td>
+              <td>{{users.employee_type}}</td>
+              <td>
+                <a ng-href="#/user_profile/{{users.id}}" class="btn btn-xs btn-info">
+                  <i class="fa fa-user"></i>
+                </a>
+                <a ng-href="#/edit_user/{{users.id}}" 
+                  class="btn btn-xs btn-success">
+                  <i class="fa fa-edit"></i>
+                </a>
+                <button class="btn btn-xs btn-danger" ng-click="deleteUser(users.id)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+  

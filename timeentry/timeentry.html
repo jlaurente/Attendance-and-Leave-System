@@ -1,0 +1,67 @@
+<style>
+.selected {
+    color:#008080;
+    font-weight:bold;
+}
+</style>
+<div id="page-wrapper">
+  <div ng-include="'head.html'"></div>
+  <br>
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 style="color: #666666;"><i class="fa fa-users"></i> Employee Time Entry</h3>
+      <ol class="breadcrumb">
+        <li><i class="fa fa-home"></i><a href="#/dashboard"> Home</a></li>
+        <li><i class="fa fa-user"></i> Employee Time Entry</li>
+      </ol>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <center><i class="fa fa-clock-o" style="font-size:100px"></i></center>
+      <div class="Clock">
+        <div class="Clock-time">
+          {{theclock}}
+        </div>
+      </div>
+      
+      <div class="Clock-date">
+        <center> {{ today | date }} </center>
+      </div>
+    </div>
+    <div class="form-group col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <i class="fa fa-clock-o fa-fw"></i> Time Entry Form
+        </div>
+        <div class="panel-body">
+          <form name="categoryForm" role="form">
+            
+            <div class="form-group">
+              <label for="">IN/OUT</label>
+              <select class="form-control" ng-model="emp.time_entry" required focus>
+                <option value="in">Time IN</option>
+                <option value="out">Time OUT</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="">Employee ID</label>
+              <input type="text" ng-model="emp.emp_id" class="form-control" 
+              placeholder="Enter employee id" required >
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-warning btn-lg btn-block" ng-click="addtimeEntry(emp)" data-ng-disabled="categoryForm.$invalid"> 
+                <i class="fa fa-fw fa-check"></i> Enter
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  

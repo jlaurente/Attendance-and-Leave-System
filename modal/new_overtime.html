@@ -1,0 +1,53 @@
+<div class="modal-header blue">
+  <h4 class="modal-title">
+    <i class="fa fa-fw fa-chevron-right"></i> New Overtime
+    <button type="button" class="close" ng-click="cancel()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </h4>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <form name="signupForm" role="form">
+        <div class="col-md-6">
+          <label>Start Time <a href="#" data-toggle="tooltip" data-placement="right" title="Please input a military time. Example: 19:00:00"><i class="fa fa-question-circle fa-fw"></i></a></label>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
+            <input type="text" ng-model="data.start_time" id="start_time" class="form-control" >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>End Time <a href="#" data-toggle="tooltip" data-placement="right" title="Please input a military time. Example: 24:00:00"><i class="fa fa-question-circle fa-fw"></i></a></label>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
+            <input type="text" ng-model="data.end_time" id="end_time" class="form-control" >
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label>Overtime Date</label>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="fa fa-calendar-o fa-fw"></i></span>
+            <input type="text" ng-model="data.ot_date" id="ot_date" class="form-control" required>
+          </div>
+        </div>
+        <script src="date-picker/js/moment.min.js"></script>
+        <script src="date-picker/js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript">
+          $('#ot_date').datetimepicker({format: 'YYYY-MM-DD', "defaultDate":new Date() });
+          $('#start_time').datetimepicker({format: 'HH:mm:ss'});
+          $('#end_time').datetimepicker({format: 'HH:mm:ss'});
+        </script>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Reason</label>
+            <textarea type="text" ng-model="data.reason" id="reason" class="form-control" > </textarea>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary btn-sm" data-dismiss="modal" ng-click="addOvertime(data)"> 
+    <i class="fa fa-send fa-fw"></i> Submit
+  </button> 
+</div>

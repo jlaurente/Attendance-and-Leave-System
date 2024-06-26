@@ -1,0 +1,59 @@
+<div class="modal-header yellow">
+  <h4 class="modal-title">
+    <i class="fa fa-fw fa-chevron-right"></i> Add Leave
+    <button type="button" class="close" ng-click="cancel()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </h4>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <form name="signupForm" role="form">
+      <div class="col-md-6">
+        <label>Start Date</label>
+        <div class="form-group input-group">
+          <span class="input-group-addon"><i class="fa fa-calendar-o fa-fw"></i></span>
+          <input type="text" name="start_date" ng-model="emp.start_date" class="form-control" required >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label>End Date</label>
+        <div class="form-group input-group">
+          <span class="input-group-addon"><i class="fa fa-calendar-o fa-fw"></i></span>
+          <input type="text" name="end_date" ng-model="emp.end_date" class="form-control" required >
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label>Type of Leave </label>
+        <div class="form-group input-group">
+          <span class="input-group-addon"><i class="fa fa-chevron-right fa-fw"></i></span>
+          <select class="form-control" ng-model="emp.leave_type" required>
+<!--         <option value="bereavement">Bereavement</option>
+            <option value="on business">On Business</option>
+            <option value="maternity leave">Maternity Leave</option>
+            <option value="paternity leave">Paternity Leave</option> -->
+            <option value="sick leave">Sick Leave</option>
+            <option value="vacation leave">Vacation Leave</option>  
+          </select>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Leave Reason</label>
+          <textarea type="text" ng-model="emp.reason" class="form-control" required > </textarea>
+        </div>
+      </div>
+    </form>
+    <script src="date-picker/js/moment.min.js"></script>
+      <script src="date-picker/js/bootstrap-datetimepicker.min.js"></script>
+      <script type="text/javascript">
+        $('input[name="start_date"]').datetimepicker({format: 'YYYY-MM-DD', "defaultDate":new Date() });
+        $('input[name="end_date"]').datetimepicker({format: 'YYYY-MM-DD', "defaultDate":new Date() });
+      </script>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary btn-sm" id="btnaddUser" data-dismiss="modal" ng-click="addLeave(emp)" > 
+    <i class="fa fa-send fa-fw"></i> Submit
+  </button> 
+</div>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="joy">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Attendance and Leave System V1.0.0</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Social Buttons CSS -->
+        <link href="css/bootstrap-social.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="node_modules/sweetalert/lib/sweet-alert.css">
+        <link rel="stylesheet" href="jtable/datatables.bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="jtable/buttons.datatables.min.css"/>
+        <link rel="stylesheet" href="date-picker/css/bootstrap-datetimepicker.css">
+        <!-- MetisMenu CSS -->
+        <link href="css/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Timeline CSS -->
+        <link href="css/timeline.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="css/startmin.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/toaster.css" rel="stylesheet">
+
+        <style>
+            .pre_blocker {
+              position: absolute;
+              top: 0;
+              bottom: 0%;
+              left: 0;
+              right: 0%;
+              background-color: white;
+              z-index: 99;
+              display: none;
+              text-align: center;
+              width: 100%;
+              padding-top: 25px;
+            }
+            a[ng-click]{
+                cursor: pointer;
+            }
+
+            .wrapper {
+              width: 100%;
+            }
+
+            /* Clock Module */
+            .Clock {
+              font-family: 'Oswald', sans-serif;
+              width: 1024px;
+              margin: 0 auto;
+            }
+
+            .Clock-time {
+              font-size: 80px;
+              text-align: left;
+            }
+
+            .Clock-date {
+              font-size: 35px;
+              text-align: left;
+            }
+
+        </style>
+        
+    </head>
+    <body>
+        <div class="pre_blocker" align="center" style="display:none;">
+            <p style="padding-top: 20%;"><i class="fa fa-cog fa-spin fa-2x fa-fw fa-spin-4x"></i> <span id="blocker_msg">Processing ..</span></p>
+        </div>
+        <div ng-view class="slide-animation"> </div>
+        
+        <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+        <!-- jQuery -->
+
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="js/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="js/startmin.js"></script>
+        <script src="js/jszip.js"></script>
+        <script src="js/xlsx.js"></script>
+        <script src="js/FileSaver.js"></script>
+        <script src="lodash.js"></script>
+        <script src="js/angular.min.js"></script>
+
+        <script src="js/ui-bootstrap-tpls-0.10.0.min.js"></script>
+        <script src="node_modules/angular-sweetalert/SweetAlert.min.js"></script>
+        <script src="node_modules/sweetalert/lib/sweet-alert.min.js"></script>
+        <script src="jtable/angular-datatables.min.js"></script>
+        <script src="jtable/jquery.dataTables.min.js"></script>
+        <script src="jtable/dataTables.buttons.min.js"></script>
+        <script src="jtable/buttons.colVis.min.js"></script>
+        <script src="jtable/buttons.flash.min.js"></script>
+        <script src="jtable/buttons.print.min.js"></script>
+        <script src="jtable/pdfmake.min.js"></script>
+        <script src="jtable/vfs_fonts.js"></script>
+        <script src="jtable/buttons.html5.min.js"></script>
+        <script src="jtable/angular-datatables.buttons.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+        <script src="js/angular-animate.min.js" ></script>
+        <script src="js/toaster.js"></script>
+        <script src="js/dirPagination.js"></script>
+        <script src="js/tableExport.js"></script>
+        <script src="js/jquery.base64.js"></script>
+        <script src="js/sprintf.js"></script>
+        <script src="js/jspdf.js"></script>
+        <script src="js/base64.js"></script>
+        <script src="controller/app.js"></script>
+        <script src="controller/navCtrl.js"></script>
+        <script src="controller/data.js"></script>
+        <script src="controller/directives.js"></script>
+        <script src="user_pages/user.js"></script>
+        <script src="items/item.js"></script>
+        <script src="attendance/employee.js"></script>
+        <script src="overtime/overtime.js"></script>
+        <script src="leave/leave.js"></script>
+        <script src="settings/settings.js"></script>
+        <script src="schedule/schedule.js"></script>
+        <script src="timeentry/timeentry.js"></script>
+    </body>
+</html>

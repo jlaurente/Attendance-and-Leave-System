@@ -1,0 +1,163 @@
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+   <div class="navbar-header">
+        <a class="navbar-brand" href="#/dashboard">
+            <!-- <img src="img/home.png" width="230px" style="margin-top: -8px;"></a> -->
+            Attendance and Leave Management System
+        </a>
+    </div>
+
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+    <ul class="nav navbar-right navbar-top-links">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i> {{usertype_name}}  <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="#/change_password/{{uid}}"><i class="fa fa-gear fa-fw"></i> Change Password</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="#" ng-click="logout();"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Sidebar -->
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <div ng-if="role === '1'">
+                <ul class="nav" id="side-menu" ng-controller="navCtrl" >
+                    <li ng-class="navClass('dashboard')">
+                        <a href="#/dashboard" style="color: #4d4d4d;">
+                            <i class="fa fa-dashboard fa-fw"></i> Dashboard
+                        </a>
+                    </li>
+                    <li ng-class="navClass('timeEntry')">
+                        <a href="#/timeEntry" style="color: #4d4d4d;">
+                            <i class="fa fa-clock-o fa-fw"></i> Employee Time Entry
+                        </a>
+                    </li>
+                    <li ng-class="navClass('employee')">
+                        <a href="#/employee" style="color: #4d4d4d;">
+                            <i class="fa fa-calendar fa-fw"></i> Employee Attendance
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" style="color: #4d4d4d;">
+                            <i class="fa fa-users fa-fw"></i> Employee Management<span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-third-level">
+                            <li ng-class="navClass('users')">
+                                <a href="#/users" style="color: #4d4d4d;">
+                                    <i class="fa fa-circle-o fa-fw"></i> Employee List
+                                </a>
+                            </li>
+                            <li ng-class="navClass('schedule')">
+                                <a href="#/schedule" style="color: #4d4d4d;">
+                                    <i class="fa fa-circle-o fa-fw"></i> Schedule
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" style="color: #4d4d4d;">
+                            <i class="fa fa-clock-o fa-fw"></i> Overtime Record<span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-third-level">
+                            <li ng-class="navClass('otapproval')">
+                                <a href="#/otapproval" style="color: #4d4d4d;">
+                                    <i class="fa fa-circle-o fa-fw"></i> For Approval Overtime
+                                </a>
+                            </li>
+                            <li ng-class="navClass('otapproved')">
+                                <a href="#/otapproved" style="color: #4d4d4d;">
+                                    <i class="fa fa-circle-o fa-fw"></i> Approved Overtime
+                                </a>
+                            </li>
+                            <li ng-class="navClass('otdisapproved')">
+                                <a href="#/otdisapproved" style="color: #4d4d4d;">
+                                    <i class="fa fa-circle-o fa-fw"></i> Disapproved Overtime
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" style="color: #4d4d4d;">
+                            <i class="fa fa-list fa-fw"></i> Leave Record<span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-third-level">
+                            <li ng-class="navClass('leaveapproval')">
+                                <a href="#/leaveapproval" style="color: #4d4d4d;">
+                                    <i class="fa fa-circle-o fa-fw"></i> For Approval Leave
+                                </a>
+                            </li>
+                            <li ng-class="navClass('leaveapproved')">
+                                <a href="#/leaveapproved" style="color: #4d4d4d;">
+                                    <i class="fa fa-circle-o fa-fw"></i> Approved Leave
+                                </a>
+                            </li>
+                            <li ng-class="navClass('leavedisapproved')">
+                                <a href="#/leavedisapproved" style="color: #4d4d4d;">
+                                    <i class="fa fa-circle-o fa-fw"></i> Disapproved Leave
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li ng-class="navClass('settings')">
+                        <a href="#/settings" style="color: #4d4d4d;">
+                            <i class="fa fa-gears fa-fw"></i> Employee Settings
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div ng-if="role === '2'">
+                <ul class="nav" id="side-menu" ng-controller="navCtrl">
+                    <li ng-class="navClass('dashboard')">
+                        <a href="#/dashboard" style="color: #4d4d4d;">
+                            <i class="fa fa-dashboard fa-fw"></i>&nbsp;Dashboard
+                        </a>
+                    </li>
+                    <li ng-class="navClass('employee')">
+                        <a href="#/employee" style="color: #4d4d4d;">
+                            <i class="fa fa-calendar"></i>&nbsp;Attendance Record
+                        </a>
+                    </li>
+                    <li ng-class="navClass('overtime')">
+                        <a href="#/overtime" style="color: #4d4d4d;">
+                            <i class="fa fa-clock-o"></i>&nbsp;Overtime Record
+                        </a>
+                    </li>
+                    <li ng-class="navClass('leave')">
+                        <a href="#/leave" style="color: #4d4d4d;">
+                            <i class="fa fa-list"></i>&nbsp;Leaves Record
+                        </a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav> 
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="js/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/startmin.js"></script>

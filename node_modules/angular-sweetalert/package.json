@@ -1,0 +1,86 @@
+{
+  "_args": [
+    [
+      "angular-sweetalert",
+      "C:\\xampp\\htdocs\\ciphertrick\\fancyalerts"
+    ]
+  ],
+  "_from": "angular-sweetalert@latest",
+  "_id": "angular-sweetalert@1.1.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular-sweetalert",
+  "_nodeVersion": "0.10.36",
+  "_npmUser": {
+    "email": "pedro@oitozero.com",
+    "name": "oitozero"
+  },
+  "_npmVersion": "2.4.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular-sweetalert",
+    "raw": "angular-sweetalert",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-sweetalert/-/angular-sweetalert-1.1.0.tgz",
+  "_shasum": "147a0d511cfa4b10e873dcdf5d0f80dfe67864b2",
+  "_shrinkwrap": null,
+  "_spec": "angular-sweetalert",
+  "_where": "C:\\xampp\\htdocs\\ciphertrick\\fancyalerts",
+  "author": {
+    "name": "pedro@oitozero.com"
+  },
+  "bugs": {
+    "url": "https://github.com/oitozero/ngSweetAlert/issues"
+  },
+  "contributors": [
+    {
+      "name": "gnick666@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "angular": "^1.3.14",
+    "sweetalert": "^0.4.2"
+  },
+  "description": "AngularJS wrapper for SweetAlert",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "147a0d511cfa4b10e873dcdf5d0f80dfe67864b2",
+    "tarball": "https://registry.npmjs.org/angular-sweetalert/-/angular-sweetalert-1.1.0.tgz"
+  },
+  "gitHead": "394ff387de44a2ca1a1af61f24942de6faf0965b",
+  "homepage": "https://github.com/oitozero/ngSweetAlert",
+  "keywords": [
+    "angular",
+    "AngularJs",
+    "sweetalert",
+    "sweet",
+    "alert"
+  ],
+  "license": "MIT",
+  "main": "SweetAlert.js",
+  "maintainers": [
+    {
+      "email": "pedro@oitozero.com",
+      "name": "oitozero"
+    }
+  ],
+  "name": "angular-sweetalert",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oitozero/ngSweetAlert.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.0"
+}
